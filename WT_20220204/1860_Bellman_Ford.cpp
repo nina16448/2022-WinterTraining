@@ -20,12 +20,15 @@ pair <int, int> graph[110];
 
 void Bellman_ford(){
     for(int i = 0; i < M; i++){
-        if((value[graph[i].v] - change[graph[i].v][graph[i].u].cost) * change[graph[i].v][graph[i].u].rate > value[graph[i].u]){
-            value[graph[i].u] = max(value[graph[i].u], (value[graph[i].v] - change[graph[i].v][graph[i].u].cost) * change[graph[i].v][graph[i].u].rate);
+        double after = (value[graph[i].v] - change[graph[i].v][graph[i].u].cost) * change[graph[i].v][graph[i].u].rate; //v換成u
+        if(after > value[graph[i].u]){
+            value[graph[i].u] = after;
             flag = false;
         }
-        if((value[graph[i].u] - change[graph[i].u][graph[i].v].cost) * change[graph[i].u][graph[i].v].rate > value[graph[i].v]){
-            value[graph[i].v] = max(value[graph[i].v], (value[graph[i].u] - change[graph[i].u][graph[i].v].cost) * change[graph[i].u][graph[i].v].rate);
+
+        after = (value[graph[i].u] - change[graph[i].u][graph[i].v].cost) * change[graph[i].u][graph[i].v].rate; //u換成v
+        if(after > value[graph[i].v]){
+            value[graph[i].v] = after;
             flag = false;
         }
     }
