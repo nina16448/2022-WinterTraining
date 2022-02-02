@@ -1,10 +1,5 @@
 #include <iostream>
 #include <queue>
-#include <vector>
-#include<cstdio>
-#include<cstring>
-#include<algorithm>
-#include<cmath>
 using namespace std;
 typedef long long lint;
 #define weight first
