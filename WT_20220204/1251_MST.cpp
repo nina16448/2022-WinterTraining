@@ -64,14 +64,6 @@ int main(){
             pq.pop();
         }
 
-        int flag = UF.Find(0);
-        for(int i = 1; i < N; i++){
-            if(UF.Find(i) != flag){
-                flag = -1;
-                break;
-            }
-        }
-
         cout << sum << "\n";
     }
 
