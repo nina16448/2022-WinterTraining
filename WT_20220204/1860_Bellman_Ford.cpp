@@ -20,13 +20,13 @@ pair <int, int> graph[110];
 
 void Bellman_ford(){
     for(int i = 0; i < M; i++){
-        double after = (value[graph[i].v] - change[graph[i].v][graph[i].u].cost) * change[graph[i].v][graph[i].u].rate; //v換成u
+        double after = (value[graph[i].v] - change[graph[i].v][graph[i].u].cost) * change[graph[i].v][graph[i].u].rate;
         if(after > value[graph[i].u]){
             value[graph[i].u] = after;
             flag = false;
         }
 
-        after = (value[graph[i].u] - change[graph[i].u][graph[i].v].cost) * change[graph[i].u][graph[i].v].rate; //u換成v
+        after = (value[graph[i].u] - change[graph[i].u][graph[i].v].cost) * change[graph[i].u][graph[i].v].rate;
         if(after > value[graph[i].v]){
             value[graph[i].v] = after;
             flag = false;
