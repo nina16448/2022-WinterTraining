@@ -34,7 +34,7 @@ struct Union_Find{
         y = Find(y);
 
         if(x == y) return;
-
+        
         if(tree[x] > tree[y]){
             root[y] = x;
             tree[x] += tree[y];
@@ -55,6 +55,7 @@ int main(){
         UF.init();
         while(!pq.empty()) pq.pop();
         sum = 0;
+        
         for(int t = 1; t < N; t++){
             cin >> PA >> num;
             while(num--){
@@ -75,10 +76,9 @@ int main(){
                 break;
             }
         }
-        if(flag == -1) cout << "-1\n";
-        else
-            cout << sum << "\n";
+
+        cout << sum << "\n";
     }
-    
+
     return 0;
 }
